@@ -1,0 +1,19 @@
+html,
+body {
+  height: 100%;
+}
+#map {
+  height: 40%;
+  width: 50%;
+}
+input {
+  margin: 20px;
+}
+#charts,
+.chart {
+  width: 50%;
+  height: 300px;
+}
+.chart {
+  float: left;
+}
