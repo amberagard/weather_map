@@ -49,11 +49,12 @@
     function getWeather() {
         var zipcode = $('#place').val().trim();
         var url = 'http://api.wunderground.com/api/357ca8eec3b7e3da/forecast10day/q/' + zipcode + '.json?callback=?';
-        makeGraph(zipcode);
 
         $.getJSON(url, function(data) {
             $('#charts').append(`<div class=chart data-zip=${zipcode}></div>`);
+            makeGraph(zipcode);
             getForecast(zipcode, data);
+
         });
     }
 
@@ -80,7 +81,7 @@
 
     function makeGraph(zip) {
         let chart = $(`.chart[data-zip=${zip}]`)[0];
-        charts[zip] = AmCharts.makeChart('charts', {
+        charts[zip] = AmCharts.makeChart(chart, {
         'type': 'serial',
         'theme': 'chalk',
         'pathToImages': 'http://www.amcharts.com/lib/3/images/',
