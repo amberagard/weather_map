@@ -2,4 +2,3 @@
 node_modules/
 public/
 tools/traceur-compiler/
-traceur.js
